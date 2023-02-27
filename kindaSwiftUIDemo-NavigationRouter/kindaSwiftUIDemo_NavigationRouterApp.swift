@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import kindaSwiftUI
+import kindaSwiftUI247
 
 @main
 struct kindaSwiftUIDemo_NavigationRouterApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            KindaSwiftUIContentView(logLevel: .debug) {
+                ContentView()
+            }
         }
     }
 }

@@ -7,18 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C95D748E29ACC1B100A8A2FD /* NavigationRouterSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D748D29ACC1B100A8A2FD /* NavigationRouterSetup.swift */; };
+		C95D749A29ACC1BB00A8A2FD /* CakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D749029ACC1BB00A8A2FD /* CakeView.swift */; };
+		C95D749B29ACC1BB00A8A2FD /* PopcornView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D749129ACC1BB00A8A2FD /* PopcornView.swift */; };
+		C95D749C29ACC1BB00A8A2FD /* DoughnutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D749229ACC1BB00A8A2FD /* DoughnutView.swift */; };
+		C95D749D29ACC1BB00A8A2FD /* KiwiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D749329ACC1BB00A8A2FD /* KiwiView.swift */; };
+		C95D749E29ACC1BB00A8A2FD /* JunkFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D749429ACC1BB00A8A2FD /* JunkFoodView.swift */; };
+		C95D749F29ACC1BB00A8A2FD /* HoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D749529ACC1BB00A8A2FD /* HoneyView.swift */; };
+		C95D74A029ACC1BB00A8A2FD /* CookieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D749629ACC1BB00A8A2FD /* CookieView.swift */; };
+		C95D74A129ACC1BB00A8A2FD /* IceCreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D749729ACC1BB00A8A2FD /* IceCreamView.swift */; };
+		C95D74A229ACC1BB00A8A2FD /* ChocolateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D749829ACC1BB00A8A2FD /* ChocolateView.swift */; };
+		C95D74A329ACC1BB00A8A2FD /* CarrotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D749929ACC1BB00A8A2FD /* CarrotView.swift */; };
 		C97D481229A67867004A0B26 /* kindaSwiftUIDemo_NavigationRouterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D481129A67867004A0B26 /* kindaSwiftUIDemo_NavigationRouterApp.swift */; };
 		C97D481429A67867004A0B26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D481329A67867004A0B26 /* ContentView.swift */; };
 		C97D481629A67868004A0B26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C97D481529A67868004A0B26 /* Assets.xcassets */; };
 		C97D481929A67868004A0B26 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C97D481829A67868004A0B26 /* Preview Assets.xcassets */; };
+		C97D482129A678B3004A0B26 /* kindaSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C97D482029A678B3004A0B26 /* kindaSwiftUI */; };
+		C97D482629A67EA6004A0B26 /* KindaSwiftUI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C97D482529A67EA6004A0B26 /* KindaSwiftUI-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C95D748D29ACC1B100A8A2FD /* NavigationRouterSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouterSetup.swift; sourceTree = "<group>"; };
+		C95D749029ACC1BB00A8A2FD /* CakeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CakeView.swift; sourceTree = "<group>"; };
+		C95D749129ACC1BB00A8A2FD /* PopcornView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopcornView.swift; sourceTree = "<group>"; };
+		C95D749229ACC1BB00A8A2FD /* DoughnutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoughnutView.swift; sourceTree = "<group>"; };
+		C95D749329ACC1BB00A8A2FD /* KiwiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KiwiView.swift; sourceTree = "<group>"; };
+		C95D749429ACC1BB00A8A2FD /* JunkFoodView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JunkFoodView.swift; sourceTree = "<group>"; };
+		C95D749529ACC1BB00A8A2FD /* HoneyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoneyView.swift; sourceTree = "<group>"; };
+		C95D749629ACC1BB00A8A2FD /* CookieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookieView.swift; sourceTree = "<group>"; };
+		C95D749729ACC1BB00A8A2FD /* IceCreamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IceCreamView.swift; sourceTree = "<group>"; };
+		C95D749829ACC1BB00A8A2FD /* ChocolateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChocolateView.swift; sourceTree = "<group>"; };
+		C95D749929ACC1BB00A8A2FD /* CarrotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarrotView.swift; sourceTree = "<group>"; };
 		C97D480E29A67867004A0B26 /* kindaSwiftUIDemo-NavigationRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kindaSwiftUIDemo-NavigationRouter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97D481129A67867004A0B26 /* kindaSwiftUIDemo_NavigationRouterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kindaSwiftUIDemo_NavigationRouterApp.swift; sourceTree = "<group>"; };
 		C97D481329A67867004A0B26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C97D481529A67868004A0B26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C97D481829A67868004A0B26 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C97D482529A67EA6004A0B26 /* KindaSwiftUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KindaSwiftUI-Info.plist"; sourceTree = "<group>"; };
+		C97D482729A67FF4004A0B26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +52,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97D482129A678B3004A0B26 /* kindaSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C95D748F29ACC1BB00A8A2FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C95D749029ACC1BB00A8A2FD /* CakeView.swift */,
+				C95D749129ACC1BB00A8A2FD /* PopcornView.swift */,
+				C95D749229ACC1BB00A8A2FD /* DoughnutView.swift */,
+				C95D749329ACC1BB00A8A2FD /* KiwiView.swift */,
+				C95D749429ACC1BB00A8A2FD /* JunkFoodView.swift */,
+				C95D749529ACC1BB00A8A2FD /* HoneyView.swift */,
+				C95D749629ACC1BB00A8A2FD /* CookieView.swift */,
+				C95D749729ACC1BB00A8A2FD /* IceCreamView.swift */,
+				C95D749829ACC1BB00A8A2FD /* ChocolateView.swift */,
+				C95D749929ACC1BB00A8A2FD /* CarrotView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C97D480529A67867004A0B26 = {
 			isa = PBXGroup;
 			children = (
@@ -51,9 +95,13 @@
 		C97D481029A67867004A0B26 /* kindaSwiftUIDemo-NavigationRouter */ = {
 			isa = PBXGroup;
 			children = (
+				C97D482729A67FF4004A0B26 /* Info.plist */,
 				C97D481129A67867004A0B26 /* kindaSwiftUIDemo_NavigationRouterApp.swift */,
 				C97D481329A67867004A0B26 /* ContentView.swift */,
+				C95D748D29ACC1B100A8A2FD /* NavigationRouterSetup.swift */,
+				C95D748F29ACC1BB00A8A2FD /* Views */,
 				C97D481529A67868004A0B26 /* Assets.xcassets */,
+				C97D482529A67EA6004A0B26 /* KindaSwiftUI-Info.plist */,
 				C97D481729A67868004A0B26 /* Preview Content */,
 			);
 			path = "kindaSwiftUIDemo-NavigationRouter";
@@ -83,6 +131,9 @@
 			dependencies = (
 			);
 			name = "kindaSwiftUIDemo-NavigationRouter";
+			packageProductDependencies = (
+				C97D482029A678B3004A0B26 /* kindaSwiftUI */,
+			);
 			productName = "kindaSwiftUIDemo-NavigationRouter";
 			productReference = C97D480E29A67867004A0B26 /* kindaSwiftUIDemo-NavigationRouter.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +162,9 @@
 				Base,
 			);
 			mainGroup = C97D480529A67867004A0B26;
+			packageReferences = (
+				C97D481F29A678B3004A0B26 /* XCRemoteSwiftPackageReference "kindaSwiftUI" */,
+			);
 			productRefGroup = C97D480F29A67867004A0B26 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C97D481929A67868004A0B26 /* Preview Assets.xcassets in Resources */,
+				C97D482629A67EA6004A0B26 /* KindaSwiftUI-Info.plist in Resources */,
 				C97D481629A67868004A0B26 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +192,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C95D749E29ACC1BB00A8A2FD /* JunkFoodView.swift in Sources */,
+				C95D749A29ACC1BB00A8A2FD /* CakeView.swift in Sources */,
 				C97D481429A67867004A0B26 /* ContentView.swift in Sources */,
+				C95D74A129ACC1BB00A8A2FD /* IceCreamView.swift in Sources */,
+				C95D749F29ACC1BB00A8A2FD /* HoneyView.swift in Sources */,
+				C95D74A329ACC1BB00A8A2FD /* CarrotView.swift in Sources */,
 				C97D481229A67867004A0B26 /* kindaSwiftUIDemo_NavigationRouterApp.swift in Sources */,
+				C95D749D29ACC1BB00A8A2FD /* KiwiView.swift in Sources */,
+				C95D74A029ACC1BB00A8A2FD /* CookieView.swift in Sources */,
+				C95D749B29ACC1BB00A8A2FD /* PopcornView.swift in Sources */,
+				C95D749C29ACC1BB00A8A2FD /* DoughnutView.swift in Sources */,
+				C95D748E29ACC1B100A8A2FD /* NavigationRouterSetup.swift in Sources */,
+				C95D74A229ACC1BB00A8A2FD /* ChocolateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +336,7 @@
 				DEVELOPMENT_TEAM = R252PR8AVU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "kindaSwiftUIDemo-NavigationRouter/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -299,7 +365,7 @@
 				DEVELOPMENT_TEAM = R252PR8AVU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "kindaSwiftUIDemo-NavigationRouter/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -339,6 +405,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C97D481F29A678B3004A0B26 /* XCRemoteSwiftPackageReference "kindaSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rebeloper/kindaSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C97D482029A678B3004A0B26 /* kindaSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C97D481F29A678B3004A0B26 /* XCRemoteSwiftPackageReference "kindaSwiftUI" */;
+			productName = kindaSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C97D480629A67867004A0B26 /* Project object */;
 }
