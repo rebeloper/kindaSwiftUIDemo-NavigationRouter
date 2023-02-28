@@ -7,7 +7,6 @@
 
 import SwiftUI
 import kindaSwiftUI
-import kindaSwiftUI247
 
 @main
 struct kindaSwiftUIDemo_NavigationRouterApp: App {
