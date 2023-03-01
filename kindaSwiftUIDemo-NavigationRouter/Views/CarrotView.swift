@@ -10,17 +10,25 @@ import kindaSwiftUI
 
 struct CarrotView: View {
     
-    @EnvironmentObject var router: Router<Destination>
+    @EnvironmentObject private var router: Router<Destination>
     
     var body: some View {
         List {
-            Button("Push 🥝") {
-                router.push(.kiwiView)
+            Section {
+                Button("Push 🥝") {
+                    router.push(.kiwiView)
+                }
+            } header: {
+                Text("Push")
             }
             
 #if os(iOS) || os(watchOS)
-            Button("Present 🍯 full screen cover") {
-                router.present(.honeyViewFullScreenCover)
+            Section {
+                Button("Present 🍯 full screen cover") {
+                    router.present(.honeyViewFullScreenCover)
+                }
+            } header: {
+                Text("Present")
             }
 #endif
         }

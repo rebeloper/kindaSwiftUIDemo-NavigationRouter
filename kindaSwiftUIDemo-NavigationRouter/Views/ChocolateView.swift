@@ -10,48 +10,74 @@ import kindaSwiftUI
 
 struct ChocolateView: View {
     
-    @EnvironmentObject var router: Router<Destination>
+    @EnvironmentObject private var router: Router<Destination>
+    
+    @State private var dependencyLink = ""
     
     var body: some View {
         List {
-            Button("Pop") {
-                router.pop()
+            Section {
+                Button("Pop") {
+                    router.pop()
+                }
+                
+                Button("Pop the last 2") {
+                    router.pop(.the(last: 2))
+                }
+                
+                Button("Pop to index 1") {
+                    router.pop(.to(index: 1))
+                }
+                
+                Button("Pop to root") {
+                    router.pop(.toRoot)
+                }
+            } header: {
+                Text("Pop")
             }
-            
-            Button("Pop the last 2") {
-                router.pop(.the(last: 2))
-            }
-            
-            Button("Pop to index 1") {
-                router.pop(.to(index: 1))
-            }
-            
-            Button("Pop to root") {
-                router.pop(.toRoot)
+
+            Section {
+                Button("Push 🍓") {
+                    router.push(.fruitsViewSheet(dependency: "🍓"))
+                }
+                
+                Button("Push 🍒") {
+                    router.push(.fruitsViewSheet(dependency: "🍒"))
+                }
+            } header: {
+                Text("Push with dependency")
             }
             
             #if os(iOS) || os(macOS)
-            Button("Present 🍯 sheet") {
-                router.present(.honeyViewSheet)
+            Section {
+                Button("Present 🍓 sheet") {
+                    router.present(.fruitsViewSheet(dependency: "🍓"), dependencyLink: $dependencyLink)
+                }
+                
+                Button("Present 🍒 sheet") {
+                    router.present(.fruitsViewSheet(dependency: "🍒"), dependencyLink: $dependencyLink)
+                }
+            } header: {
+                Text("Present with dependency")
+            }
+
+            Section {
+                Button("Present 🍯 sheet") {
+                    router.present(.honeyViewSheet)
+                }
+            } header: {
+                Text("Present")
             }
             #endif
-            
-//            #if os(iOS) || os(watchOS)
-//            Button("Present 🍯 full screen cover") {
-//                router.present(.honeyViewFullScreenCover)
-//            }
-//            #endif
             
         }
         .navigationTitle("🍫")
         #if os(iOS) || os(macOS)
-        .sheet(for: Destination.honeyViewSheet, presentationDetents: [.medium], presentationDragIndicatorVisibility: .visible) {
-            print("🍯 sheet dismissed")
+        .sheet(for: Destination.honeyViewSheet, presentationDetents: [.medium, .large], presentationDragIndicatorVisibility: .visible) {
+            log(.debug, type: .developer, "🍯 sheet dismissed")
         }
+        .sheet(for: Destination.fruitsViewSheet(dependency: dependencyLink))
         #endif
-//        #if os(iOS) || os(watchOS)
-//        .fullScreenCover(for: Destination.honeyViewFullScreenCover)
-//        #endif
     }
 }
 

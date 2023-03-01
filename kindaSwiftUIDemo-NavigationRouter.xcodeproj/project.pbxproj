@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C92B05DA29AFC45100264234 /* FruitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92B05D929AFC45100264234 /* FruitsView.swift */; };
 		C95D748E29ACC1B100A8A2FD /* NavigationRouterSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D748D29ACC1B100A8A2FD /* NavigationRouterSetup.swift */; };
 		C95D749A29ACC1BB00A8A2FD /* CakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D749029ACC1BB00A8A2FD /* CakeView.swift */; };
 		C95D749B29ACC1BB00A8A2FD /* PopcornView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D749129ACC1BB00A8A2FD /* PopcornView.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C92B05D929AFC45100264234 /* FruitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsView.swift; sourceTree = "<group>"; };
 		C95D748D29ACC1B100A8A2FD /* NavigationRouterSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouterSetup.swift; sourceTree = "<group>"; };
 		C95D749029ACC1BB00A8A2FD /* CakeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CakeView.swift; sourceTree = "<group>"; };
 		C95D749129ACC1BB00A8A2FD /* PopcornView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopcornView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				C95D749729ACC1BB00A8A2FD /* IceCreamView.swift */,
 				C95D749829ACC1BB00A8A2FD /* ChocolateView.swift */,
 				C95D749929ACC1BB00A8A2FD /* CarrotView.swift */,
+				C92B05D929AFC45100264234 /* FruitsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				C97D481429A67867004A0B26 /* ContentView.swift in Sources */,
 				C95D74A129ACC1BB00A8A2FD /* IceCreamView.swift in Sources */,
 				C95D749F29ACC1BB00A8A2FD /* HoneyView.swift in Sources */,
+				C92B05DA29AFC45100264234 /* FruitsView.swift in Sources */,
 				C95D74A329ACC1BB00A8A2FD /* CarrotView.swift in Sources */,
 				C97D481229A67867004A0B26 /* kindaSwiftUIDemo_NavigationRouterApp.swift in Sources */,
 				C95D749D29ACC1BB00A8A2FD /* KiwiView.swift in Sources */,

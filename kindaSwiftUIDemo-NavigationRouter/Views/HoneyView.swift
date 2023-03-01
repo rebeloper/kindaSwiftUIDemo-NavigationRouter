@@ -10,29 +10,41 @@ import kindaSwiftUI
 
 struct HoneyView: View {
     
-    @EnvironmentObject var router: Router<Destination>
+    @EnvironmentObject private var router: Router<Destination>
     
     var body: some View {
         List {
-            Button("Push 🍪") {
-                router.push(.cookieView)
+            Section {
+                Button("Pop") {
+                    router.pop()
+                }
+                
+                Button("Pop the last 2") {
+                    router.pop(.the(last: 2))
+                }
+                
+                Button("Pop to root") {
+                    router.pop(.toRoot)
+                }
+            } header: {
+                Text("Pop")
             }
             
-            Button("Pop") {
-                router.pop()
-            }
-            
-            Button("Pop the last 2") {
-                router.pop(.the(last: 2))
-            }
-            
-            Button("Pop to root") {
-                router.pop(.toRoot)
+            Section {
+                Button("Push 🍪") {
+                    router.push(.cookieView)
+                }
+            } header: {
+                Text("Push")
             }
             
             #if os(iOS) || os(macOS)
-            Button("Present 🍦 sheet") {
-                router.present(.iceCreamViewSheet)
+            Section {
+                Button("Present 🍦 sheet") {
+                    router.present(.iceCreamViewSheet)
+                }
+            } header: {
+                Text("Present")
             }
             #endif
         }

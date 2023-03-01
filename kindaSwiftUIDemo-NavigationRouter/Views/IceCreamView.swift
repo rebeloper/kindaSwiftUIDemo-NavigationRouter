@@ -10,25 +10,28 @@ import kindaSwiftUI
 
 struct IceCreamView: View {
     
-    @EnvironmentObject var router: Router<Destination>
+    @EnvironmentObject private var router: Router<Destination>
     
     var body: some View {
         List {
-            
-            Button("Pop") {
-                router.pop()
-            }
-            
-            Button("Pop the last 4") {
-                router.pop(.the(last: 4))
-            }
-            
-            Button("Pop to index 1") {
-                router.pop(.to(index: 1))
-            }
-            
-            Button("Pop to root") {
-                router.pop(.toRoot)
+            Section {
+                Button("Pop") {
+                    router.pop()
+                }
+                
+                Button("Pop the last 4") {
+                    router.pop(.the(last: 4))
+                }
+                
+                Button("Pop to index 1") {
+                    router.pop(.to(index: 1))
+                }
+                
+                Button("Pop to root") {
+                    router.pop(.toRoot)
+                }
+            } header: {
+                Text("Pop")
             }
         }
         .navigationTitle("🍦")

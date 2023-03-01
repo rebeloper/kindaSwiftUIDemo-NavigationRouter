@@ -18,7 +18,7 @@ public enum Destination: RouterDestination {
     
     case cakeView
     case doughnutView
-    case junkFoodView(title: String)
+    case junkFoodView(dependency: String)
     case chocolateView
     case cookieView
     case popcornView
@@ -27,37 +27,39 @@ public enum Destination: RouterDestination {
     case honeyViewFullScreenCover
     #endif
     case iceCreamViewSheet
+    case fruitsViewSheet(dependency: String)
     
-    public var modalValue: Int {
+    public var modalValue: ModalValue {
         switch self {
-        case .defaultView: return -1
+        case .defaultView: return ModalValue(index: -1)
             
-        case .carrotView: return 0
-        case .kiwiView: return 1
+        case .carrotView: return ModalValue(index: 0)
+        case .kiwiView: return ModalValue(index: 1)
             
-        case .cakeView: return 2
-        case .doughnutView: return 3
-        case .junkFoodView(_): return 4
-        case .chocolateView: return 5
-        case .cookieView: return 6
-        case .popcornView: return 7
-        case .honeyViewSheet: return 8
+        case .cakeView: return ModalValue(index: 2)
+        case .doughnutView: return ModalValue(index: 3)
+        case .junkFoodView(let dependency): return ModalValue(index: 4, dependency: dependency)
+        case .chocolateView: return ModalValue(index: 5)
+        case .cookieView: return ModalValue(index: 6)
+        case .popcornView: return ModalValue(index: 7)
+        case .honeyViewSheet: return ModalValue(index: 8)
         #if os(iOS) || os(watchOS)
-        case .honeyViewFullScreenCover: return 9
+        case .honeyViewFullScreenCover: return ModalValue(index: 9)
         #endif
-        case .iceCreamViewSheet: return 10
+        case .iceCreamViewSheet: return ModalValue(index: 10)
+        case .fruitsViewSheet(let dependency): return ModalValue(index: 11, dependency: dependency)
             
         }
     }
     
-    public init?(modalValue: Int) {
-        switch modalValue {
+    public init?(modalValue: ModalValue) {
+        switch modalValue.index {
         case 0: self = .carrotView
         case 1: self = .kiwiView
             
         case 2: self = .cakeView
         case 3: self = .doughnutView
-        case 4: self = .junkFoodView(title: "")
+        case 4: self = .junkFoodView(dependency: modalValue.dependency as? String ?? "")
         case 5: self = .chocolateView
         case 6: self = .cookieView
         case 7: self = .popcornView
@@ -66,6 +68,7 @@ public enum Destination: RouterDestination {
         case 9: self = .honeyViewFullScreenCover
         #endif
         case 10: self = .iceCreamViewSheet
+        case 11: self = .fruitsViewSheet(dependency: modalValue.dependency as? String ?? "")
             
         default:
             self = .defaultView
@@ -86,8 +89,8 @@ public enum Destination: RouterDestination {
             CakeView()
         case .doughnutView:
             DoughnutView()
-        case .junkFoodView(let title):
-            JunkFoodView(title: title)
+        case .junkFoodView(let dependency):
+            JunkFoodView(title: dependency)
         case .chocolateView:
             ChocolateView()
         case .cookieView:
@@ -102,6 +105,8 @@ public enum Destination: RouterDestination {
         #endif
         case .iceCreamViewSheet:
             IceCreamView()
+        case .fruitsViewSheet(let dependency):
+            FruitsView(title: dependency)
         }
     }
 }

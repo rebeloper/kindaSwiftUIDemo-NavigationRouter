@@ -10,14 +10,18 @@ import kindaSwiftUI
 
 struct CakeView: View {
     
-    @EnvironmentObject var router: Router<Destination>
+    @EnvironmentObject private var router: Router<Destination>
     
     @State private var didPresentDeepLink = false
     
     var body: some View {
         List {
-            Button("Push 🍩") {
-                router.push(.doughnutView)
+            Section {
+                Button("Push 🍩") {
+                    router.push(.doughnutView)
+                }
+            } header: {
+                Text("Push")
             }
         }
         .navigationTitle("🎂")
@@ -33,7 +37,7 @@ struct CakeView: View {
         log(.debug, type: .developer, "Presenting deep link")
         Task {
             await router.push(.doughnutView)
-            await router.push(.junkFoodView(title: "🍕"))
+            await router.push(.junkFoodView(dependency: "🍕"))
             await router.push(.chocolateView)
             #if os(iOS) || os(macOS)
             await router.present(.honeyViewSheet)
