@@ -11,6 +11,7 @@ import kindaSwiftUI
 struct CakeView: View {
     
     @EnvironmentObject private var router: Router<Destination>
+    @EnvironmentObject private var deepLinkDependencyManager: DeepLinkDependencyManager
     
     @State private var didPresentDeepLink = false
     
@@ -41,10 +42,13 @@ struct CakeView: View {
             await router.push(.chocolateView)
             #if os(iOS) || os(macOS)
             await router.present(.honeyViewSheet)
+            await router.present(.fruitsViewSheetFromHoneyView(dependency: "🍉"), dependencyLink: $deepLinkDependencyManager.fruitViewDependency)
             #elseif os(watchOS)
             await router.present(.honeyViewFullScreenCover)
+            await router.present(.fruitsViewFullScreenCoverFromHoneyView(dependency: "🍉"), dependencyLink: $deepLinkDependencyManager.fruitViewDependency)
             #elseif os(tvOS)
             await router.push(.honeyViewSheet)
+            await router.push(.fruitsViewSheetFromHoneyView(dependency: "🍉"))
             #endif
             didPresentDeepLink.toggle()
         }

@@ -10,11 +10,15 @@ import kindaSwiftUI
 
 @main
 struct kindaSwiftUIDemo_NavigationRouterApp: App {
+    
+    @StateObject private var deepLinkDependencyManager = DeepLinkDependencyManager()
+    
     var body: some Scene {
         WindowGroup {
             KindaSwiftUIContentView(logLevel: .debug) {
                 ContentView()
             }
+            .environmentObject(deepLinkDependencyManager)
         }
     }
 }

@@ -11,8 +11,7 @@ import kindaSwiftUI
 struct ChocolateView: View {
     
     @EnvironmentObject private var router: Router<Destination>
-    
-    @State private var dependencyLink = ""
+    @EnvironmentObject private var deepLinkDependencyManager: DeepLinkDependencyManager
     
     var body: some View {
         List {
@@ -51,11 +50,11 @@ struct ChocolateView: View {
             #if os(iOS) || os(macOS)
             Section {
                 Button("Present 🍓 sheet") {
-                    router.present(.fruitsViewSheet(dependency: "🍓"), dependencyLink: $dependencyLink)
+                    router.present(.fruitsViewSheet(dependency: "🍓"), dependencyLink: $deepLinkDependencyManager.fruitViewDependency)
                 }
                 
                 Button("Present 🍒 sheet") {
-                    router.present(.fruitsViewSheet(dependency: "🍒"), dependencyLink: $dependencyLink)
+                    router.present(.fruitsViewSheet(dependency: "🍒"), dependencyLink: $deepLinkDependencyManager.fruitViewDependency)
                 }
             } header: {
                 Text("Present with dependency")
@@ -73,10 +72,10 @@ struct ChocolateView: View {
         }
         .navigationTitle("🍫")
         #if os(iOS) || os(macOS)
+        .sheet(for: Destination.fruitsViewSheet(dependency: deepLinkDependencyManager.fruitViewDependency))
         .sheet(for: Destination.honeyViewSheet, presentationDetents: [.medium, .large], presentationDragIndicatorVisibility: .visible) {
             log(.debug, type: .developer, "🍯 sheet dismissed")
         }
-        .sheet(for: Destination.fruitsViewSheet(dependency: dependencyLink))
         #endif
     }
 }

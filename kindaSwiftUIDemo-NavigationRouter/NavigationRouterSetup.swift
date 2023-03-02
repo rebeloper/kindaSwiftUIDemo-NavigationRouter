@@ -23,11 +23,15 @@ public enum Destination: RouterDestination {
     case cookieView
     case popcornView
     case honeyViewSheet
-    #if os(iOS) || os(watchOS)
+#if os(iOS) || os(watchOS)
     case honeyViewFullScreenCover
-    #endif
+#endif
     case iceCreamViewSheet
     case fruitsViewSheet(dependency: String)
+    case fruitsViewSheetFromHoneyView(dependency: String)
+#if os(iOS) || os(watchOS)
+    case fruitsViewFullScreenCoverFromHoneyView(dependency: String)
+#endif
     
     public var modalValue: ModalValue {
         switch self {
@@ -43,11 +47,15 @@ public enum Destination: RouterDestination {
         case .cookieView: return ModalValue(index: 6)
         case .popcornView: return ModalValue(index: 7)
         case .honeyViewSheet: return ModalValue(index: 8)
-        #if os(iOS) || os(watchOS)
+#if os(iOS) || os(watchOS)
         case .honeyViewFullScreenCover: return ModalValue(index: 9)
-        #endif
+#endif
         case .iceCreamViewSheet: return ModalValue(index: 10)
         case .fruitsViewSheet(let dependency): return ModalValue(index: 11, dependency: dependency)
+        case .fruitsViewSheetFromHoneyView(let dependency): return ModalValue(index: 12, dependency: dependency)
+#if os(iOS) || os(watchOS)
+        case .fruitsViewFullScreenCoverFromHoneyView(let dependency): return ModalValue(index: 13, dependency: dependency)
+#endif
             
         }
     }
@@ -64,11 +72,15 @@ public enum Destination: RouterDestination {
         case 6: self = .cookieView
         case 7: self = .popcornView
         case 8: self = .honeyViewSheet
-        #if os(iOS) || os(watchOS)
+#if os(iOS) || os(watchOS)
         case 9: self = .honeyViewFullScreenCover
-        #endif
+#endif
         case 10: self = .iceCreamViewSheet
         case 11: self = .fruitsViewSheet(dependency: modalValue.dependency as? String ?? "")
+        case 12: self = .fruitsViewSheetFromHoneyView(dependency: modalValue.dependency as? String ?? "")
+#if os(iOS) || os(watchOS)
+        case 13: self = .fruitsViewFullScreenCoverFromHoneyView(dependency: modalValue.dependency as? String ?? "")
+#endif
             
         default:
             self = .defaultView
@@ -99,14 +111,18 @@ public enum Destination: RouterDestination {
             PopcornView()
         case .honeyViewSheet:
             HoneyView()
-        #if os(iOS) || os(watchOS)
+#if os(iOS) || os(watchOS)
         case .honeyViewFullScreenCover:
             HoneyView()
-        #endif
         case .iceCreamViewSheet:
             IceCreamView()
         case .fruitsViewSheet(let dependency):
             FruitsView(title: dependency)
+        case .fruitsViewSheetFromHoneyView(let dependency):
+            FruitsView(title: dependency)
+        case .fruitsViewFullScreenCoverFromHoneyView(let dependency):
+            FruitsView(title: dependency)
+#endif
         }
     }
 }
@@ -117,21 +133,21 @@ public enum Destination: RouterDestination {
 public enum Tab: RouterTab {
     
     case item(systemImage: String, title: String)
-
+    
     public var body: some View {
         switch self {
         case .item(let systemImage, let title):
             tabItem(systemImage: systemImage, title: title)
         }
     }
-
+    
     @ViewBuilder
     func tabItem(systemImage: String, title: String) -> some View {
         Image(systemName: systemImage)
             .imageScale(.large)
-        #if !os(watchOS)
+#if !os(watchOS)
         Text(title).bold()
-        #endif
+#endif
     }
 }
 
@@ -140,22 +156,22 @@ public enum Tab: RouterTab {
 public enum CustomTab: RouterTab {
     
     case item(systemImage: String, title: String)
-
+    
     public var body: some View {
         switch self {
         case .item(let systemImage, let title):
             tabItem(systemImage: systemImage, title: title)
         }
     }
-
+    
     @ViewBuilder
     func tabItem(systemImage: String, title: String) -> some View {
         HStack {
             Image(systemName: systemImage)
                 .imageScale(.large)
-            #if !os(watchOS)
+#if !os(watchOS)
             Text(title).bold()
-            #endif
+#endif
         }
         .foregroundColor(.white)
         .padding(6)
@@ -172,25 +188,29 @@ public enum CustomTab: RouterTab {
 public enum CustomUnselectedTab: RouterUnselectedTab {
     
     case item(systemImage: String, title: String)
-
+    
     public var body: some View {
         switch self {
         case .item(let systemImage, let title):
             tabItem(systemImage: systemImage, title: title)
         }
     }
-
+    
     @ViewBuilder
     func tabItem(systemImage: String, title: String) -> some View {
         HStack {
             Image(systemName: systemImage)
                 .imageScale(.large)
-            #if !os(watchOS)
+#if !os(watchOS)
             Text(title)
-            #endif
+#endif
         }
         .foregroundColor(.gray)
         .padding(12)
     }
 }
 #endif
+
+class DeepLinkDependencyManager: ObservableObject {
+    @Published var fruitViewDependency = ""
+}
