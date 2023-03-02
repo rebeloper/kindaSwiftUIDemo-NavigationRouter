@@ -11,7 +11,7 @@ import kindaSwiftUI
 struct HoneyView: View {
     
     @EnvironmentObject private var router: Router<Destination>
-    @EnvironmentObject private var deepLinkDependencyManager: DeepLinkDependencyManager
+    @EnvironmentObject private var routerDependencyLinker: RouterDependencyLinker
     
     var body: some View {
         List {
@@ -52,7 +52,7 @@ struct HoneyView: View {
         .navigationTitle("🍯")
         #if os(iOS) || os(macOS)
         .sheet(for: Destination.iceCreamViewSheet, presentationDetents: [.fraction(0.4)])
-        .sheet(for: Destination.fruitsViewSheetFromHoneyView(dependency: deepLinkDependencyManager.fruitViewDependency))
+        .sheet(for: Destination.fruitsViewSheetFromHoneyView(dependency: routerDependencyLinker.fruitViewDependency))
         #endif
     }
 }

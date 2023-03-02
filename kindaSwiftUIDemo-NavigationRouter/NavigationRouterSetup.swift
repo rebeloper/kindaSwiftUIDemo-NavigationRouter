@@ -211,6 +211,6 @@ public enum CustomUnselectedTab: RouterUnselectedTab {
 }
 #endif
 
-class DeepLinkDependencyManager: ObservableObject {
+class RouterDependencyLinker: ObservableObject {
     @Published var fruitViewDependency = ""
 }
