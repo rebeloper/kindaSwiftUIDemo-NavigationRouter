@@ -211,10 +211,7 @@ public enum CustomUnselectedTab: RouterUnselectedTab {
 }
 #endif
 
-class ModalDependencyLinker: RouterModalModalDependencyLinker {
+class ModalDependencyLinker: RouterModalDependencyLinker {
     @Published var fruitViewDependency = ""
 }
 
-class RouterModalModalDependencyLinker: ObservableObject {
-    init() {}
-}

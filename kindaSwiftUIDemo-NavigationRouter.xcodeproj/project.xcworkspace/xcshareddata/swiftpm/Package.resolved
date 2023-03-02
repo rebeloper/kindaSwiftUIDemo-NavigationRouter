@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/rebeloper/kindaSwiftUI.git",
       "state" : {
-        "revision" : "04af3fb1d01b4278b5f9f2e295cc232787b45ede",
-        "version" : "1.1.0"
+        "revision" : "429705e32b28145ea42ee555274a21acf9b8ceed",
+        "version" : "1.1.2"
       }
     }
   ],
