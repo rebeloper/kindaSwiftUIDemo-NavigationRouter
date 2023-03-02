@@ -10,21 +10,23 @@ import kindaSwiftUI
 
 struct ContentView: View {
     
-    @StateObject private var routerDependencyLinker = RouterDependencyLinker()
+    @StateObject private var modalDependencyLinker = ModalDependencyLinker()
     
     var body: some View {
 //        RouterStack<Destination>(root: .carrotView)
+//            .environmentObject(modalDependencyLinker)
 
         TabRouterStack<Destination, Tab>([
             .init(.carrotView, tab: .item(systemImage: "carrot", title: "Carrot")),
             .init(.cakeView, tab: .item(systemImage: "birthday.cake", title: "Cake"))
         ])
-        .environmentObject(routerDependencyLinker)
+        .environmentObject(modalDependencyLinker)
         
 //        CustomTabRouterStack<Destination, CustomTab, CustomUnselectedTab>([
 //            .init(.carrotView, tab: .item(systemImage: "carrot", title: "Carrot"), unselectedTab: .item(systemImage: "carrot", title: "Carrot")),
 //            .init(.cakeView, tab: .item(systemImage: "birthday.cake", title: "Cake"), unselectedTab: .item(systemImage: "birthday.cake", title: "Cake"))
 //        ], tabSelection: 1)
+//        .environmentObject(modalDependencyLinker)
     }
 }
 
